@@ -1,0 +1,20 @@
+.featured-article img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    object-fit: cover;
+    max-height: 200px;
+  }
+  .container{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: beige;
+  }
+  

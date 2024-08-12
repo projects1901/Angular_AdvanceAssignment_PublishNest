@@ -1,0 +1,55 @@
+<app-navbar (searchEvent)="handleSearch($event)"></app-navbar>
+
+<div class="container">
+      
+    <!-- Highlighted Featured Article -->
+    <div class="featured-article mt-4">
+      <img [src]="featuredArticle.imageUrl" class="img-fluid w-100" alt="Featured Article">
+      <h2 class="mt-3">{{ featuredArticle.title }}</h2>
+      <p class="text-muted">{{ featuredArticle.description | slice:0:200 }}...</p>
+      <small class="text-muted">{{ featuredArticle.author }} - {{ featuredArticle.publishDate | date }}</small>
+    </div>
+  
+    <!-- Sorting Buttons -->
+    <div class="sorting-buttons mt-4">
+      <button class="btn btn-primary me-2" (click)="sortArticles('latest')">Latest</button>
+      <!-- <button class="btn btn-secondary" (click)="sortArticles('popular')">Most Popular</button> -->
+    </div><br><br>
+
+    <div *ngIf="isLoading" class="loading-spinner">
+      Loading articles...
+    </div>
+  
+    <!-- Articles List -->
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-12 mb-4" *ngFor="let article of paginatedArticles">
+          <div class="card h-100" (click)="viewArticle(article)">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ article.title }}</h5>
+                  <p class="card-text">{{ article.description | slice:0:200 }}...</p>
+                  <p class="card-text">
+                    <small class="text-muted">{{ article.authorName }}</small>&nbsp;
+                    <small class="text-muted">{{ article.publishDate | date }}</small>
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <img [src]="article.thumbnail" class="img-fluid rounded-end" alt="Article Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination (if required) -->
+      <nav aria-label="Page navigation" class="d-flex justify-content-center">
+        <ul class="pagination">
+          <li class="page-item" *ngFor="let i of [].constructor(pages); let index = index" (click)="goToPage(index+1)">
+            <a class="page-link">{{ index+1 }}</a>
+          </li>
+        </ul>
+      </nav>
+  </div>
+  

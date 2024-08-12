@@ -1,0 +1,36 @@
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row w-100">
+      
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="w-100">
+          <h2 class="text-center">Login</h2>
+          <form (ngSubmit)="login()">
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <br><br>
+            <button type="button" class="btn btn-primary w-100" (click)="register()">Register</button>
+          </form>
+        </div>
+      </div>
+  
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="d-flex flex-column align-items-center">
+          <h4>Or sign in with:</h4>
+          <button class="btn btn-outline-secondary btn-lg mb-3 w-75" (click)="signInWithGoogle()">
+            <i class="fab fa-google"></i> Google
+          </button>
+          <button class="btn btn-outline-primary btn-lg mb-3 w-75" (click)="signInWithFacebook()">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

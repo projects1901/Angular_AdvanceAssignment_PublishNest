@@ -1,0 +1,24 @@
+.container
+{
+    border: 1px solid burlywood;
+    background-color: beige;
+    padding: 1rem;
+    justify-content: center;
+    display: grid;
+    margin-top: 5rem;
+}
+i{
+    border: 1px solid burlywood;
+    border-radius: 30px;
+    padding: 7px;
+}
+.addons
+{
+    margin-bottom: 1rem;
+}
+svg
+{
+    margin-left: 1rem;
+    border: 1px solid darkgray;
+    background-color: #97b9b9;
+}

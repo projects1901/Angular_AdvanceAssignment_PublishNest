@@ -1,0 +1,22 @@
+<div class="author">
+    <app-navbar (searchEvent)="onSearch($event)"></app-navbar>
+
+    <div class="container mt-4">
+        <h3>All Authors</h3>
+
+        <div *ngIf="isLoading" class="loading-spinner">
+            Loading...
+        </div>
+        <div class="row" *ngIf="!isLoading">
+            <div class="col-md-4 mb-4" *ngFor="let author of filteredAuthors">
+                <div class="card h-100">
+                    <img [src]="author.profilePictureUrl" class="card-img-top" alt="{{ author.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ author.name }}</h5>
+                        <p class="card-text">{{ author.bio }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

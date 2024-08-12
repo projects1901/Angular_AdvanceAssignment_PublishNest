@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <div class="navbar-brand">Publish Nest</div>
+
+        <!-- Search input on the left side -->
+        <form class="d-flex me-auto" role="search" (submit)="onSearch($event, searchInput.value)">
+            <input #searchInput class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <!-- Hamburger menu button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </span>
+        </button>
+
+        <!-- Collapsible menu content -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="dropdown-item" routerLink="">Home</li>
+                <li class="dropdown-item" routerLink="create">Create Article</li>
+                <li class="dropdown-item" routerLink="author-directory">Explore Articles</li>
+                <li class="dropdown-item" (click)="logOut()">Logout</li>
+            </ul>
+        </div>
+    </div>
+</nav>

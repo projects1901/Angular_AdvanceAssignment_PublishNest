@@ -1,0 +1,20 @@
+<div style="background-color: rgb(235, 238, 240); padding: 2%;">
+<h2>Create Post</h2>
+<editor
+  apiKey="kjw8fzja9ycb6hbjo3oyhydx04qjyfluzma3vivjhiddgbw4"
+  [init]="editorConfig"
+  (onInit)="onEditorInit($event)"
+></editor>
+
+<div>  
+  <button class="btn btn-primary m-2" (click)="preview()">Preview</button>
+  <button class="btn btn-secondary m-2" (click)="saveContent()">Save</button>
+</div>
+<br>
+  
+<div class="preview" *ngIf="content">
+    <div [innerHTML]="content">
+        cvsgfb
+    </div>
+</div>
+</div>
