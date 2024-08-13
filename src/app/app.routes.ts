@@ -18,5 +18,6 @@ export const routes: Routes = [
     { path: 'author-directory', component: AuthorDirectoryComponent, canActivate: [authGuard] },
     { path: 'create', component: CreatePostComponent, canActivate: [authGuard] },
     { path: 'view-article/:id', component: ViewArticlesComponent, canActivate: [authGuard] },
+    { path: 'comment/:id', component: CommentsComponent, canActivate: [authGuard] },
     { path: 'comment/:id', component: CommentsComponent, canActivate: [authGuard] }
 ];
